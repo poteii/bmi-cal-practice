@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { BmiPage } from './bmi';
+import { BmiProvider } from '../../providers/bmi/bmi';
 
 @NgModule({
   declarations: [
@@ -9,5 +10,6 @@ import { BmiPage } from './bmi';
   imports: [
     IonicPageModule.forChild(BmiPage),
   ],
+  providers: [BmiProvider]
 })
-export class BmiPageModule {}
+export class BmiPageModule { }

@@ -1,12 +1,6 @@
+import { BmiProvider } from './../../providers/bmi/bmi';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the BmiPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { IonicPage } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -15,11 +9,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class BmiPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  height: number;
+  weight: number;
+  bmi: number;
+
+  constructor(private bmiProvider: BmiProvider) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad BmiPage');
+  calculateBmi() {
+    this.bmi = this.bmiProvider.calculateBMI(this.height, this.weight);
   }
+
 
 }
