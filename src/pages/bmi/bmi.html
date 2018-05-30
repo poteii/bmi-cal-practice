@@ -12,11 +12,11 @@
     <ion-card-content>
       <ion-item>
         <ion-label>Height (M)</ion-label>
-        <ion-input type="number" [(ngModel)]="height"></ion-input>
+        <ion-input [(ngModel)]="height"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label>Weight (KG)</ion-label>
-        <ion-input type="number" [(ngModel)]="weight"></ion-input>
+        <ion-input [(ngModel)]="weight"></ion-input>
       </ion-item>
 
       <button ion-button color="secondary" (click)="calculateBmi()">Calculate</button>
@@ -24,5 +24,9 @@
     </ion-card-content>
   </ion-card>
 
-  <h1>Your BMI is: {{bmi}} </h1>
+  <div *ngIf="bmi">
+    <h1>Your BMI is: {{bmi.BMI}} </h1>
+    <h2>This is classified as: {{bmi.classification}}</h2>
+  </div>
+
 </ion-content>
